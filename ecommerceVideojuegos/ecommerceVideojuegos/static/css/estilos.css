@@ -1,0 +1,387 @@
+*{
+    padding:0px !important;
+    margin:0px !important;
+}
+
+body{
+    background-color: rgb(211, 211, 211) !important;
+}
+
+#idNav{
+    background-color: greenyellow !important;
+    width:99% !important;
+    height:14.5vw !important;
+    display:flex !important;
+    justify-content: flex-start !important;
+}
+
+#idNav button{
+    font-size:25px !important;
+}
+
+
+#idNav li{
+    font-size:23px !important;
+    list-style: none !important;
+    display: inline-block !important;
+    margin-left:20px !important;
+    margin-top:30px !important;
+
+}
+
+li a{
+    color:black !important;
+
+}
+
+#idNav li:hover{
+    cursor:pointer !important;
+    text-decoration:underline !important;
+}
+
+#li1, #li2,#li3,#li4,#li5,#li6,#li7,#li8,#li9,#li10{
+    display: inline-block !important;
+}
+
+#li6{
+    background-color: green;
+    width:10vw;
+}
+
+#li8_1{
+    position:absolute !important;
+    top:0px !important;
+    right:100px !important;
+}
+
+#divBotonComprar{
+    top:20px ;
+    left:25px;
+    position: relative;
+    border: 5px solid orange;
+    width:150px;
+}
+
+#botonComprar{
+    margin-left:35px;
+
+}
+
+#botonComprar{
+    width:70px;
+    height:70px;
+    background-color: transparent; 
+    border: none;
+}
+
+#botonComprar:hover{
+    cursor:pointer;
+}
+
+#textoComprar{
+    margin-left:35px;
+    font-size:25px;
+}
+
+#li4 p{
+    font-size:1.6vw;
+    margin-top:5px;
+    top:0px;
+    width:300px;
+}
+
+#divFecha{
+    color:black;
+    position:absolute;
+    top:390px;
+    right:50px;
+    border: 5px solid bisque;
+    padding:5px 5px;
+}
+
+#idFecha{
+    font-size:23px;
+
+}
+
+#search{
+    height:40px;
+    width:10vw;
+}
+
+#labelSearch{
+    position:relative;
+    left:1vw;
+}
+
+#search:hover{
+    background-color:rgb(252, 200, 209,0.7);
+    text-decoration: none!important;
+}
+
+#listaJuegosForCiclo{
+    background-color:grey;
+    width:200px;
+    
+}
+
+/************/
+
+#containterTitulo{
+    font-size:35px;
+    margin-left:20%;
+    text-decoration: underline;
+    position:relative;
+    top:3vw;
+    left:35vw;
+}
+
+#container {
+    width: 50%;  
+    overflow: hidden; 
+    position: relative; 
+    background-color: antiquewhite;
+    top:10vw;
+    left:24vw;
+}
+
+#sliderWrapper {
+    display: flex; /* Alinea las imágenes horizontalmente */
+    transition: transform 0.5s ease; /* Transición suave al cambiar las imágenes */
+
+}
+
+.imageList {
+    display: flex; /* Alinea las imágenes horizontalmente */
+}
+
+.imageItem {
+    width: 100%; /* Ancho completo del contenedor */
+    height: auto; /* Altura automática según el ancho */
+    object-fit: cover; /* Ajusta la imagen dentro del contenedor */
+    
+}
+
+#nextBtn, #prevBtn{
+    position: absolute; /* Posición absoluta para los botones */
+    top: 29vw; /* Alinea los botones en el centro vertical */
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cursor de puntero al pasar el ratón */
+    z-index: 10; /* Asegura que estén por encima de las imágenes */
+}
+
+#nextBtn{
+    right: 190px; 
+}
+
+#prevBtn {
+    left: 170px; 
+}
+
+.nextImage, .prevImage{
+    width: 90px; 
+    height: auto; 
+}
+
+
+
+#nextBtn p, #prevBtn p{
+    font-size:30px;
+
+}
+
+#idFooter{
+    background-color: green;
+    position:absolute;
+    top:110vw;
+    width:85%;
+    height:10vw;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+}
+
+#footerLink1{
+    width:32.5vw;
+    top:0px;
+    left:300px;
+    background-color: rgb(210, 210, 233);
+    font-size:25px;
+
+}
+
+#footerLink2{
+    width:33.1vw;
+    left:390px;
+    top:0px;
+    background-color: rgb(216, 209, 196);
+    font-size:25px;
+}
+
+#footerLink3{
+    width:32.5vw;
+    right:10px;
+    top:0px;
+    background-color: yellow;
+    font-size:25px;
+
+}
+
+
+.imgFooter1{
+    margin-left:215px;
+    margin-top:30px;
+}
+
+.imgFooter4{
+    left:5vw;
+}
+
+#idFooter img:hover{
+    cursor:pointer;
+}
+
+
+/*----------*/
+
+#columnasJuegos1{
+    display:grid;
+    top:5vw;
+    width:100%;
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+#columnasJuegos2{
+    display:grid;
+    width:100%;
+    grid-template-columns:repeat(4,1fr);
+    margin-left:0px;
+
+}
+
+#pComprar{
+    position:relative;
+    top:360px;
+    text-align:center;
+    color:blue;
+    font-size:25px;
+    padding:5px 5px;
+    border: 4px solid black;
+}
+
+#pComprar:hover{
+    cursor:pointer;
+}
+
+#pJuego1,#pJuego2,#pJuego3,#pJuego4{
+    position:relative;
+    top:320px;
+    text-align:center;
+}
+
+#precioPJuego1{
+    position:relative;
+    top:330px;
+    left:80px;
+    font-size:25px;
+}
+
+#precioPJuego1:hover{
+text-decoration: underline;
+}
+
+#pJuego1,#pJuego2,#pJuego3,#pJuego4{
+    font-size:30px;
+}
+
+#pJuego1:hover,#pJuego2:hover,#pJuego3:hover,#pJuego4:hover,#pComprar:hover{
+    text-decoration: underline;
+}
+
+#footerLink1 #pFooterLink1{
+    position:absolute;
+    top:20px;
+
+}
+
+#footerLink1 #pFooterLink2{
+    position:absolute;
+    top:80px;
+
+}
+
+#footerLink2 #pFooterLink2_1{
+    position:absolute;
+    top:5vw;
+}
+
+
+#footerLink3 #pFooterLink4{
+    position:absolute;
+    top:6vw;
+}
+
+#buttonIdJuegoComprar1{
+    position:relative;
+    bottom:6vw;
+    left:7vw;
+    width:99%;
+    height:18vw;
+    display:block;
+}
+
+
+#idJuegoComprar1{
+    width:16vw;
+    height:18vw;
+
+}
+
+#idJuegoComprar2{
+    width:16vw;
+    height:18vw;
+    margin-left:100px!important;
+
+}
+
+#idJuegoComprar3{
+    width:16vw;
+    height:18vw;
+    margin-left:100px!important;
+
+}
+
+
+#idJuegoComprar4{
+    width:16vw;
+    height:18vw;
+    margin-left:100px!important;
+
+}
+
+#idJuegoComprar5{
+    width:16vw;
+    height:18vw;
+    margin-left:100px!important;
+}
+
+#idJuegoComprar1,#idJuegoComprar2,#idJuegoComprar3,#idJuegoComprar4,#idJuegoComprar5{
+    cursor:pointer;
+}
+
+
+/*De comprar.html*/
+
+#comprar1{
+    width:5%;
+    height:5%;
+
+}
+
+#comprar1:hover{
+    cursor:pointer;
+}
+
+
+

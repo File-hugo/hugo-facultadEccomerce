@@ -1,0 +1,1 @@
+carpeta media es para subir fotos a base datos.txt

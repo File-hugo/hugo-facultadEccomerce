@@ -1,0 +1,124 @@
+{% extends "headeryfooter.html" %}
+{% block content %}
+
+{% load static %}
+<link type="text/css" rel="stylesheet" href="{% static 'css/estilosLogin.css' %}">
+
+        <div id="divLogin">
+            <label id="loginUsuario">Usuario:</label>
+            <input id="inputLoginUsuario" type="text" maxlength="10" name="usuario" v-model="messageInput1Actualizado" placeholder="Introduce nombre">
+        
+            <label id="loginContraseña">Contraseña:</label>
+            <input id="inputLoginContraseña" type="password" maxlength="10" name="contraseña" placeholder="Introduce contraseña">
+            
+                <!--<div id="divImgOjoContraseña"></div>
+        -->
+            <p id="idMessageInput1">
+            </p>
+            <p id="idMessageInput2">
+            </p>
+            <p id="idAvisoMessageInput">
+            </p>
+            <p id="idAvisoMessageInputCorrecto">Usuario:
+            </p>
+            <p id="idAvisoMessageInputCorrecto2">
+            </p>     
+            <p id="idAvisoMessageInputCorrecto3">Contraseña:
+            </p>
+            <p id="idAvisoMessageInputCorrecto4">
+            </p>   
+
+         <button id="posicionButtonMessageInput" onclick="chequeo1()">Verificar datos
+            </button>
+         <!--
+            <button id="posicionButtonMessageInput">Verificar datos
+            </button>
+               -->
+            <button id="posicionoBorrarUsuario">Borrar usuario
+            </button>
+            <button id="posicionoBorrarContraseña">Borrar contraseña
+            </button>            
+
+            <button id="idChequeo2" onclick="chequeo2()">
+                <a id="posicionoButtonLoguearse" target="_blank" >Loguearse</a>  
+            </button>
+
+        </div>
+
+    <div id="divImgOjoContraseña">
+        <button id="buttonImgOjoContraseña"> </button>
+        <img id="" src="{% static 'imagenes/ojo Contraseña.png' %}"  alt="Mostrar contraseña" title="">
+    </div>
+    <!-----------       
+------->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+        const togglePasswordVisibility = (inputId, iconId) => {
+            const mostrarContraseña = document.getElementById(inputId);
+            const icon = document.getElementById(iconId);
+
+            icon.addEventListener("click", () => {
+                if (mostrarContraseña.type === "password") {
+                    mostrarContraseña.type = "text";
+                } else {
+                    mostrarContraseña.type = "password";
+                }
+            });
+        };
+
+        togglePasswordVisibility("inputLoginContraseña", "idJuegoComprar1");
+    });
+    </script>  
+
+<script type="text/javascript">
+    
+    var varVerificoDatos=document.getElementById("posicionButtonMessageInput");
+    var varLoginUsuario=document.getElementById("inputLoginUsuario");
+    var varLoginContraseña=document.getElementById("inputLoginContraseña");
+    var varIdAvisoMessageInputCorrecto2=document.getElementById("idAvisoMessageInputCorrecto2");
+    var varIdAvisoMessageInputCorrecto4=document.getElementById("idAvisoMessageInputCorrecto4");
+////
+
+
+    function chequeo1(valorContraseña,valorUsuario){   
+        var valorContraseña = document.getElementById('inputLoginContraseña').value;
+        var valorUsuario = document.getElementById('inputLoginUsuario').value;
+        
+        localStorage.setItem('textoGuardado', valorContraseña);//textoguardado almacena el valor de var valor
+        localStorage.setItem('textoGuardado2', valorUsuario);
+
+        var textoGuardado = localStorage.getItem('textoGuardado');
+        var textoGuardado2 = localStorage.getItem('textoGuardado2');
+
+        document.getElementById("posicionoButtonLoguearse").innerHTML;
+        varIdAvisoMessageInputCorrecto2.innerHTML=varLoginUsuario.value;
+        varIdAvisoMessageInputCorrecto4.innerHTML=varLoginContraseña.value;
+
+        if (valorContraseña!="" && valorUsuario !=""){
+
+            //alert("Usuario:" + textoGuardado2 + "."+ "\n" + "Contraseña:" + textoGuardado);
+            //var pepe=document.getElementById('enlace').setAttribute('href', baseUrl+'/id/'+id);
+        }else{
+            alert("Aviso: Faltan Datos o falta verificar datos.");
+        }
+        return {
+        usuario: valorUsuario,
+        contraseña: valorContraseña
+    };
+    }
+
+    function chequeo2(){     
+        var datos = chequeo1();
+        if (datos.usuario !="" && datos.contraseña !=""){
+            window.location.href = "../";
+            //alert("Datos registrados")
+        }else{
+            //alert("Pon datos o faltan")
+
+        }
+    }
+
+</script>
+{% endblock %}
+
+

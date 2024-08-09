@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título de tu página</title>
+    <!-- Cargar archivos estáticos como CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/estilos.css' %}">
+
+</head>
+<body>
+
+<!-- Bloque para el nav -->
+<nav id="idNav">
+    <img src="{% static 'imagenes/logoNavBar.png' %}" alt="Logo">
+    <ul>
+        <li id="li2"><a href="/ayuda">Ayuda</a></li>
+        <li id="li3"><a href="/noticias">Noticias</a></li>
+        
+<!--    <li id="li5">
+            <a href="#">{{contador}}</a>
+        </li>-->
+<!--         <li id="li8_1">1</li>
+        -->
+        <li id="li1">
+            <a href="{% url 'contacto' %}">Contactanos</a>
+        </li>
+        <li id="li7">  
+            <a href="{% url 'index' %}">Inicio</a>
+        </li>
+        <li id="li8">
+            <a href="{% url 'comprar' %}">Comprar</a>   
+        </li>
+        {% if user.is_authenticated %}
+        <li id="li5">
+            <p>Hola, {{user.username}}</p>
+        </li>
+        <li id="li10">
+            <a href="{% url 'logout' %}">Logout</a>
+        </li>
+        <li id="li6">
+            <label id="labelSearch" for="search">Buscador</label>
+            <input type="search" id="search" name="search"/>
+        </li>
+
+        <li class="nav-item">
+<!--Carro resumen  sale de urls.py carrito-->
+            <a class="nav-link" href="{% url 'carro_resumen' %}">
+            <i class="fa fa-shopping-cart" aria-hidden="true">Carrito</i>
+            <img id="comprar1" src="{% static 'imagenes/carroCompras1.png' %}" title="carro compras" alt="carro compras"> 
+            <span class="badge badge-pill badge-primary">{{request.session.cantidad}}</span> 
+        </a>
+        </li>
+            {% else %}
+        <li id="li9">
+            <a href="{% url 'login' %}">Login</a>
+            <img src="{% static 'imagenes/inicia sesion.png' %}" width="50px" height="50px" alt="Iniciar sesión" title="Iniciar sesión">
+            </li>
+            {% endif %}
+        </li>
+
+    </ul>
+</nav>
+
+{% block content %}
+{% endblock %}
+
+
+<!-- Bloque para el footer -->
+<footer id="idFooter">
+    <div id="footerLink1">
+        <p id="pFooterLink1">Sobre nosotros</p>
+        <p id="pFooterLink2">Contactanos</p>
+    </div>
+    <div id="footerLink2">
+        <p id="pFooterLink2_1">Segundo footer</p>
+        <img class="imgFooter4" alt="Facebook" src="{% static 'imagenes/segundoFooterImagen.png' %}" title="Facebook" width="70px" height="70px">
+    </div>
+    <div id="footerLink3">
+        <p id="pFooterLink4">Redes sociales
+        </p>
+        <a href="http://facebook.com" target="_blank">
+            <img class="imgFooter1" alt="Facebook" src="{% static 'imagenes/facebook.png' %}" title="Facebook" width="70px" height="70px">
+        </a>
+        <a href="http://instagram.com" target="_blank">
+            <img class="imgFooter2" alt="Instagram" src="{% static 'imagenes/instagram.png' %}" title="Instagram" width="70px" height="70px">
+        </a>
+        <a href="http://twitter.com" target="_blank">
+            <img class="imgFooter3" alt="Twitter" src="{% static 'imagenes/twitter.png' %}" title="Twitter" width="70px" height="70px">
+        </a>
+    </div>
+
+</footer>
+
+<!-- Cargar archivos estáticos como JavaScript -->
+<script src="{% static 'js/tuscript.js' %}"></script>
+
+
+<!-- Agrega el enlace a Bootstrap JS (al final del archivo para mejorar la carga) -->
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

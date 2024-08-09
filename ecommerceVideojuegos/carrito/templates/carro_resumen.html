@@ -1,0 +1,59 @@
+{% extends "headeryfooter.html" %}
+
+{% block content %}
+
+<h1>CARRO_RESUMEN</h1>
+
+<table class="table">
+    <thead >
+      <tr >
+        <th>#</th>
+        <th>Tìtulo</th>
+        <th>Precio</th>
+        <th>cantidad</th>
+       </tr>
+
+    </thead>
+    <tbody>
+    <tr>
+    {% for key,value in carro.carro.items %}
+      <th scope="row">{{key}}</th>
+      <td style="font-size:20px;"
+      >{{value.titulo}}</td>
+
+      <td>{{value.precio}}</td>
+      <td>{{value.cantidad}}</td>
+
+    </tr>  
+    <tr>
+    <td> 
+      <a href="{% url 'carro_borrar' key %}" type="button" class="btn btn-danger">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+          <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+          <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+        </svg>
+      </a>
+    </td>
+  </tr>
+ <!--   <p style="font-size:25px;
+    ">Cantidad de libros: {{cantidad}}</p>
+ -->
+    {% endfor %}
+        <!--
+        <th scope="row">1</th>
+        <td>{{carro.carro.3.titulo}}</td>
+        <td>{{carro.carro.3.precio}}</td>
+        Toma el 3er indice del libro si elegi el 3
+       <td>@mdo</td>  
+      </tr>
+ -->
+    </tbody>
+  </table>
+
+ <!-- <p>{{carro}}</p>
+  <p>{{carro.carro}}</p> <h2>{{carro.carro.len}}</h2>
+  -->
+  <a type="button" class="btn btn-success" href="{% url 'comprar' %}">Comprar</a>
+  <a type="button" class="btn btn-danger" href="{% url 'carro_limpiar' %}">Limpiar</a>  
+
+{% endblock %}

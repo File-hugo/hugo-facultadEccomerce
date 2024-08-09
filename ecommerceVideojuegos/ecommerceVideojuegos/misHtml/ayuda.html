@@ -1,0 +1,52 @@
+{% extends "headerYfooter.html" %}
+
+{% load static %}
+{% block content %}
+
+    <link type="text/css" rel="stylesheet" href="{% static 'css/estilosTres.css' %}">
+
+
+<div id="div1">
+    <p style="font-size:28px;">Para comprar debe elegir los videojuegos con su foto o texto. Este se sumara o restara del carrito
+    </p>
+</div>
+
+<div id="div2Ayuda">
+    <img id="imgJuegoComprar1" alt="juego comprar1" src="{% static 'imagenes/juegoComprar1.png' %}">
+    <p id="p1">Fallout 76</p>
+    <img id="imgJuegoComprar2" alt="cursor" src="{% static 'imagenes/cursor1.png' %}">
+</div>
+
+<div id="div3Ayuda">
+    <img id="imgJuegoComprar3" alt="carro compras" src="{% static 'imagenes/carroCompras1.png' %}">
+    <p id="p2">4</p>
+    <img id="imgJuegoComprar4" alt="flecha1" src="{% static 'imagenes/flecha1.png' %}">
+
+
+
+</div>
+
+<div id="div4Ayuda" width="300px" height="300px" 
+    style="padding:35px 35px;background-color: yellowgreen;position:relative;">
+    <p style="font-size:40px;top:1vw;position:absolute;left:23vw;
+    "> Se aceptan todos los medios de pago
+    </p>
+</div>
+
+<div id="div5Ayuda" width="300px" height="300px"
+    style="padding:35px 35px;background-color: yellowgreen;position:relative;
+    top:5vw;">
+    <p style="font-size:40px;position:absolute;left:23vw;top:1vw;
+    "> Debe loguearse si se decide a comprar
+    </p>
+</div>
+
+<style>
+    #div2:hover{
+        border:5px solid orange;
+    }
+</style>
+
+{% endblock %}
+</body>
+</html>

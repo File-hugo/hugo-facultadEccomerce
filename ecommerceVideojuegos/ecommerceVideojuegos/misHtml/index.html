@@ -1,0 +1,161 @@
+{% extends "headeryfooter.html" %}
+<!-- https://www.instant-gaming.com/es/ pagina web modelo -->
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <script type="text/javascript" src="{% static 'javascript/javascriptIndex.js' %}"></script> 
+
+</head>
+<body>
+    <p id="containterTitulo">Algunos juegos, lanzamientos </p>
+
+    
+    <div id="container">
+        <div id="sliderWrapper">
+        <div class="imageList">
+            <img class="imageItem" src="{% static 'imagenes/fondo1.png' %}" alt="Sonic">
+            <img class="imageItem" src="{% static 'imagenes/fondo3.png' %}" alt="Adventure">
+            <img class="imageItem" src="{% static 'imagenes/fondo2.png' %}" alt="Assasins Creed">
+        </div>
+        </div>
+    </div>
+
+    <button id="nextBtn"><p>Siguiente</p>
+        <img class="nextImage" src="{% static 'imagenes/botonSiguiente.png' %}" alt="boton siguiente">
+    </button>
+    <button id="prevBtn"><p>Anterior</p>
+        <img class="prevImage" src="{% static 'imagenes/botonAnterior.png' %}" alt="boton anterior">
+    </button>
+  <!--
+    <div id="divBotonComprar">
+        <button id="botonComprar">
+            <a href="../comprar/" target="_blank">
+            <img src="{% static 'imagenes/carrito.png' %}" title="Comprar" width="70px" height="70px">
+            </a>
+        </button>
+        <p id="textoComprar">Comprar</p>
+    </div>
+
+    <div id="divFecha">
+        {% if fecha %}
+            <p id="idFecha">{{ fecha }}</p>
+        {% endif %}
+    </div>
+-->
+
+{% for juego in juegos %}
+    <p style="font-size:25px;
+    position:relative;
+    top:22vw;
+    width:70%;
+    background-color: aliceblue;
+    border:5px solid black;
+    list-style:none;
+    display:inline-block;
+    left:5vw;
+    ">{{juego}}
+    </p>
+{% endfor %}
+
+<p style="font-size:35px;
+    position:relative;
+    bottom:13vw;
+    left:550px;
+    color:rgb(2, 42, 2);
+    text-decoration: underline;
+    width:40%;">Lista totales de juegos
+</p>
+
+<style>
+#juegoElegido1{
+    position: relative;
+    top:430px;
+    font-size: 30px;
+}
+
+#introduceJuegos{
+    position:relative;
+    top:400px;
+    font-size:30px;
+}
+#inputIntroduceJuegos{
+    height:40px;
+    position:relative;
+    top:400px;
+    font-size:30px;
+    left:20px;
+}
+
+</style>
+
+<!--Javascript-->
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.imageItem');
+        const totalSlides = slides.length;
+        
+        function showSlide(index) {
+            // Asegúrate de que el índice esté dentro del rango
+            if (index < 0) {
+                currentIndex = totalSlides - 1;
+            } else if (index >= totalSlides) {
+                currentIndex = 0;
+            } else {
+                currentIndex = index;
+            }
+        
+            // Mueve el sliderWrapper para mostrar la imagen actual
+            const sliderWrapper = document.getElementById('sliderWrapper');
+            const slideWidth = slides[currentIndex].clientWidth;
+            sliderWrapper.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        }
+        
+        // Función para avanzar al siguiente slide
+        function nextSlide() {
+            console.log("Avanzando al siguiente slide");
+            showSlide(currentIndex + 1);
+        }
+        
+        // Función para retroceder al slide anterior
+        function prevSlide() {
+            console.log("Retrocedo slide");
+            showSlide(currentIndex - 1);
+        }
+        
+        // Selecciona el botón de siguiente
+        const nextBtn = document.getElementById('nextBtn');
+        
+        // Asigna un evento de clic al botón de siguiente
+        nextBtn.addEventListener('click', nextSlide);
+        
+        // Selecciona el botón de anterior
+        const prevBtn = document.getElementById('prevBtn');
+        
+        // Asigna un evento de clic al botón de anterior
+        prevBtn.addEventListener('click', prevSlide);
+    
+
+        
+        </script>           
+
+<!--
+
+<button type="submit" style="font-size:30px;
+    position:relative;
+    top:400px;
+    left:50px;
+">Verificar juego</button>
+<label id="introduceJuegos" for="inputIntroduceJuegos">Introduce juegos</label>
+    <input id="inputIntroduceJuegos" type="text" name="inputIntroduceJuegos" required>
+    -->
+
+{% endblock %} 
+</body>
+</html>

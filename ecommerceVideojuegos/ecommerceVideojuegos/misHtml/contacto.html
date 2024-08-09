@@ -1,0 +1,75 @@
+{% extends "headerYfooter.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/estilosLogin.css' %}">
+</head>
+<body>
+    {% block content %}
+
+    <form id="idForm" action="formulario">
+        <!--Con metodo post no lo toma, si con get-->
+    <label>Nombre:
+        <input type="text" name="nombre" placeholder ="Mete el nombre">
+    </label>
+
+    <label>Apellido: 
+        <input type="text" name="Info apellido">
+    </label>
+
+    <label>Email: 
+        <input type="email" name="Info mail">
+    </label>
+
+    <label>Comentarios:
+        <textarea name="Comentarios"
+        cols="30" rows="10"></textarea>
+    </label>
+        
+    <input type="submit" name="submit">
+</form>
+
+<style>
+#idForm{
+    position:relative;
+    top:10vw;
+    border:2px solid black;
+    height:37vw;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
+
+#idForm label{
+    font-size:25px;
+    margin-left:20px;
+
+}
+
+#idForm input{
+    width:180px;
+    height:30px;
+    box-shadow: 3px 3px 5px grey;
+
+}
+
+#idForm button{
+    width:32%;
+    font-size:30px;
+}
+
+#idForm button:hover{
+    cursor:pointer;
+}
+
+</style>
+
+</body>
+</html>
+
+{% endblock %}
+

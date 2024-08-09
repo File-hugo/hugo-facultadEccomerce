@@ -1,0 +1,73 @@
+{% extends "headerYfooter.html" %}
+
+    {% load static %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/estilos.css' %}">
+
+    {% block content %}
+
+    <p id="juegosDisponibleONo">Juegos disponibles o no disponibles</p>
+
+
+<div id="divImagenComprar">
+    {% for imagenComprar in productos %}
+        {% if imagenComprar.activo == True %}
+            <img src="{{ imagenComprar.imagen.url }}" title="imagenes comprar" alt="imagenes comprar" 
+            style="aspect-ratio:1;
+            width:200px;
+            height:200px;">
+            <p style="font-size:35px;display: inline;">
+            Hay stock</p>
+            <a href="{% url 'carro_agregar' imagenComprar.id %}" class="btn btn-primary">Comprar</a>
+
+        {% endif %}
+    {% endfor %}
+
+</div>
+
+
+<div id="divImagenComprar2">
+    {% for imagenComprar in productos %}
+        {% if imagenComprar.activo != True %}
+            <img src="{{ imagenComprar.imagen.url }}" title="imagenes comprar" alt="imagenes comprar" 
+            style="aspect-ratio:1;
+            width:200px;
+            height:200px;">
+            <p style="font-size:35px;display: inline;">
+            No disponibles</p>
+
+        {% endif %}
+    {% endfor %}
+</div>
+
+
+
+
+<style>
+
+#juegosDisponibleONo{
+    position:relative;
+    top:5vw;
+    left:30vw;
+    font-size:30px;
+}
+
+#divImagenComprar{
+    width:97%;
+    height:80vw;
+    background-color: yellow;
+    position:relative;
+    top:5vw;
+    left:1vw;
+}
+#divImagenComprar2{
+    width:97%;
+    height:40vw;
+    background-color: yellow;
+    position:relative;
+    bottom:35vw;
+    left:1vw;
+}
+</style>
+
+{% endblock %}
+

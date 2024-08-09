@@ -1,0 +1,79 @@
+{% extends "headerYfooter.html" %}
+
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/estilosTres.css' %}">
+<style>
+    body{
+        background-color: bisque;
+    }
+</style>
+
+</head>
+<body>
+
+<div id="div1Noticias">
+    <a target="_blank" 
+    style="font-size:28px;position:absolute;top:1vw;left:3vw;color:blue;width:25vw";
+    title="Clic para ver la nota"
+    href="https://as.com/meristation/noticias/prince-of-persia-the-lost-crown-detalla-su-hoja-de-ruta-nuevos-modos-desafios-y-dlc-de-historia-n/">
+    Prince of Persia detalla su hoja de ruta
+    </a>
+    <img src="{% static 'imagenes/Prince of Persia.png' %}" width="300px" height="300px" alt="Ver noticia"
+    style="position:absolute;top:10vw;left:2vw;">
+
+    <a target="_blank" 
+    style="font-size:28px;position:absolute;top:1vw;left:33vw;color:blue;width:25vw";
+    title="Clic para ver la nota" 
+    href="https://www.mundodeportivo.com/alfabeta/multiplataforma/crysis-4-ofrece-una-pequena-actualizacion-de-su-desarrollo">
+    Crysis 4 se encuentra en desarrollo
+    </a>
+    <img src="{% static 'imagenes/crysis4.png' %}" width="300px" height="300px" alt="Ver noticia"
+    style="position:absolute;top:10vw;left:32vw;">
+    
+    <a target="_blank" 
+    title="Clic para ver la nota" href="https://www.3djuegos.com/juegos/league-of-legends/noticias/muchos-jugadores-league-of-legends-temen-proximo-gran-cambio-riot-games-hay-buen-motivo-para-ello-error-podria-tener-consecuencias-muy-graves"
+    style="font-size:28px;top:1vw;position:absolute;left:66vw;width:25vw;"
+    >Jugadores de League of legends temen   
+    </a>
+    <img src="{% static 'imagenes/League of legends1.png' %}" width="300px" height="300px"
+    style="position:absolute;top:10vw;left:65vw;">
+
+    <!--Parte 2 noticias-->
+
+    <a target="_blank" 
+    style="font-size:28px;position:absolute;top:36vw;left:3vw;width:25vw;color:blue;"title="Clic para ver la nota"
+    title="Clic para ver la nota" href="https://www.vidaextra.com/accion/red-dead-redemption-2-tiene-mejores-misiones-historia-jamas-nadie-podra-convencerme-contrario">
+    Red Dead Redemption 2 tiene una de las mejores misiones 
+    </a>
+    <img src="{% static 'imagenes/juegoComprar8.png' %}" width="300px" height="300px" alt="Ver noticia"
+    style="position:absolute;top:45vw;left:2vw;">
+
+    <a target="_blank" 
+    style="font-size:27px;position:absolute;top:36vw;left:32vw;width:28vw;color:blue;"title="Clic para ver la nota"
+    title="Clic para ver la nota" href="https://www.vidaextra.com/accion/red-dead-redemption-2-tiene-mejores-misiones-historia-jamas-nadie-podra-convencerme-contrario">
+    The Universim 2: Juego de construcción de ciudades que te permite jugar a ser Dios 
+    </a>
+    <img src="{% static 'imagenes/juegoComprar5.png' %}" width="300px" height="300px" alt="Ver noticia"
+    style="position:absolute;top:45vw;left:32vw;">
+
+    <a target="_blank" 
+    style="font-size:27px;position:absolute;top:36vw;left:63vw;width:28vw;color:blue;"title="Clic para ver la nota"
+    title="Clic para ver la nota" href="https://www.vidaextra.com/accion/red-dead-redemption-2-tiene-mejores-misiones-historia-jamas-nadie-podra-convencerme-contrario">
+    Far Cry 6: Entre la comedia salvaje y el relato moral
+    </a>
+    <img src="{% static 'imagenes/juegoComprar3.png' %}" width="300px" height="300px" alt="Ver noticia"
+    style="position:absolute;top:45vw;left:64vw;">
+
+</div>
+
+{% endblock %}
+</body>
+</html>
